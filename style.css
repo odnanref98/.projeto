@@ -1,0 +1,515 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ec4899, #fbbf24, #10b981);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #6b7280;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #111827;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #ec4899, #fbbf24);
+    color: white !important;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(236, 72, 153, 0.3);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, #fef7f7 0%, #fffbeb 50%, #f0fdf4 100%);
+    overflow: hidden;
+    padding-top: 5rem;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(236, 72, 153, 0.1) 0%, transparent 50%, rgba(251, 191, 36, 0.1) 100%);
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #ec4899, #fbbf24, #10b981);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #6b7280;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #ec4899, #fbbf24);
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
+}
+
+/* Decorative Elements */
+.decoration {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+}
+
+.decoration-1 {
+    top: 20%;
+    left: 10%;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #ec4899, #fbbf24);
+}
+
+.decoration-2 {
+    bottom: 20%;
+    right: 10%;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #fbbf24, #10b981);
+}
+
+.decoration-3 {
+    top: 30%;
+    right: 25%;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #10b981, #ec4899);
+    opacity: 0.3;
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 5rem 0;
+    background: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-card:nth-child(1) {
+    background: linear-gradient(135deg, #fef7f7, #fce7f3);
+}
+
+.benefit-card:nth-child(2) {
+    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+}
+
+.benefit-card:nth-child(3) {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+}
+
+.benefit-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.75rem;
+    color: white;
+}
+
+.benefit-card:nth-child(1) .benefit-icon {
+    background: linear-gradient(135deg, #ec4899, #be185d);
+}
+
+.benefit-card:nth-child(2) .benefit-icon {
+    background: linear-gradient(135deg, #fbbf24, #d97706);
+}
+
+.benefit-card:nth-child(3) .benefit-icon {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.benefit-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+.benefit-description {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* Packages Section */
+.packages-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.package-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.package-popular {
+    background: linear-gradient(135deg, #ffffff, #fffbeb);
+    border: 2px solid #fbbf24;
+}
+
+.popular-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(135deg, #ec4899, #fbbf24);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0 1rem 0 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.package-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #111827;
+}
+
+.package-price {
+    color: #ec4899;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.package-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.package-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.feature-icon {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.feature-icon.check {
+    color: #10b981;
+}
+
+.feature-icon.times {
+    color: #ef4444;
+}
+
+.package-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.package-card:first-child .package-button {
+    background: linear-gradient(135deg, #ec4899, #fbbf24);
+    color: white;
+}
+
+.package-popular .package-button {
+    background: linear-gradient(135deg, #10b981, #fbbf24);
+    color: white;
+}
+
+.package-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.3);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #1f2937, #111827);
+    color: white;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+    font-size: 1.125rem;
+    color: #d1d5db;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #10b981, #fbbf24);
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+/* Footer */
+.footer {
+    background: #111827;
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ec4899, #fbbf24, #10b981);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.footer-description {
+    color: #9ca3af;
+    margin-bottom: 1rem;
+}
+
+.footer-copyright {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .hero-content {
+        padding: 0 1rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .packages-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .decoration {
+        display: none;
+    }
+}
+
+/* Button animations */
+.hero-button, .package-button, .contact-button, .cta-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-button::before, .package-button::before, .contact-button::before, .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.hero-button:hover::before, .package-button:hover::before, .contact-button:hover::before, .cta-button:hover::before {
+    left: 100%;
+}
