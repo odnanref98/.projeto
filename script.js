@@ -1,9 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-
-    // --- Smooth Scroll ---
+    // Seleciona todos os links que começam com '#' para a rolagem suave
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
     anchorLinks.forEach(link => {
@@ -24,23 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     top: targetPosition,
                     behavior: 'smooth'
                 });
-            }
-        });
-    });
-
-    // --- Hamburger Menu Logic ---
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', () => {
-            // Alterna a classe 'active' para mostrar/esconder o menu
-            navMenu.classList.toggle('active');
-        });
-    }
-
-    // --- Close menu on link click (for mobile) ---
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
             }
         });
     });
